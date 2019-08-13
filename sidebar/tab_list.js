@@ -27,6 +27,10 @@ function createTabEl(tab) {
 
   let tabEl = document.createElement("div");
   tabEl.className = "tab-item";
+  tabEl.addEventListener("click", () => {
+    browser.windows.update(tab.windowId, { focused: true });
+    browser.tabs.update(tab.id, { active: true });
+  });
 
   let titleContainerEl = document.createElement("div");
   titleContainerEl.className = "title-container";
