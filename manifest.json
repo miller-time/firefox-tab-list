@@ -13,8 +13,7 @@
   ],
   "sidebar_action": {
     "default_icon": {
-      "48": "icons/list-48.png",
-      "96": "icons/list-96.png"
+      "16": "icons/list-light.svg"
     },
     "default_title": "Tab List",
     "default_panel": "sidebar/tab_list.html",
