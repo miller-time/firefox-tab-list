@@ -4,9 +4,11 @@ browser.tabs.query({}).then(
       let tabEl = document.createElement("p");
 
       let titleEl = document.createElement("span");
-      titleEl.innerText = tab.title;
+      titleEl.className = "title";
+      titleEl.textContent = tab.title;
       let urlEl = document.createElement("span");
-      urlEl.innerText = tab.url;
+      urlEl.className = "url";
+      urlEl.textContent = tab.url;
 
       tabEl.appendChild(titleEl);
       tabEl.appendChild(document.createElement("br"));
