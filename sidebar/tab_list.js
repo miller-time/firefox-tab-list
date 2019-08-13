@@ -4,10 +4,7 @@ function getTabsByWindow(tabs) {
     if (!windowTabMap[tab.windowId]) {
       windowTabMap[tab.windowId] = [];
     }
-    windowTabMap[tab.windowId][tab.index] = {
-      title: tab.title,
-      url: tab.url
-    };
+    windowTabMap[tab.windowId][tab.index] = tab;
   }
 
   let tabsByWindow = [];
@@ -28,18 +25,31 @@ function getTabsByWindow(tabs) {
 function createTabEl(tab) {
   let contentEl = document.getElementById("content");
 
-  let tabEl = document.createElement("p");
+  let tabEl = document.createElement("div");
+  tabEl.className = "tab-item";
+
+  let titleContainerEl = document.createElement("div");
+  titleContainerEl.className = "title-container";
+
+  if (tab.favIconUrl) {
+    let iconEl = document.createElement("img");
+    iconEl.className = "icon";
+    iconEl.height = 16;
+    iconEl.width = 16;
+    iconEl.src = tab.favIconUrl;
+    titleContainerEl.appendChild(iconEl);
+  }
 
   let titleEl = document.createElement("span");
   titleEl.className = "title";
   titleEl.textContent = tab.title;
+  titleContainerEl.appendChild(titleEl);
+
+  tabEl.appendChild(titleContainerEl);
 
   let urlEl = document.createElement("span");
   urlEl.className = "url";
   urlEl.textContent = tab.url;
-
-  tabEl.appendChild(titleEl);
-  tabEl.appendChild(document.createElement("br"));
   tabEl.appendChild(urlEl);
 
   contentEl.appendChild(tabEl);

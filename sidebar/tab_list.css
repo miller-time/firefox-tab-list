@@ -2,13 +2,41 @@ body, html {
   height: 100%;
   width: 100%;
   -moz-user-select: text;
-  background-color: #444;
+  background-color: #38383d;
 }
 
 #content {
   margin: 8px;
 }
 
-.title, .url {
-  color: #eee;
+.tab-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4px;
+  padding: 4px;
+  background-color: #2a2a2e;
+}
+
+.tab-item:hover {
+  background-color: #4a4a4f;
+}
+
+.tab-item .title-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.tab-item .icon {
+  margin-right: 8px;
+}
+
+.tab-item .title {
+  flex-wrap: nowrap;
+  color: #f9f9fa;
+}
+
+.tab-item .url {
+  color: #d7d7db;
+  text-decoration: underline;
 }
