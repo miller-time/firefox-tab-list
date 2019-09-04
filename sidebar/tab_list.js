@@ -64,8 +64,16 @@ function createDividerEl() {
   contentEl.appendChild(document.createElement("hr"));
 }
 
+function renderTabStats(tabCount, windowCount) {
+  const textContent = tabCount + " tabs in " + windowCount + " windows, nice!";
+  document
+    .getElementById("stats")
+    .textContent = textContent;
+}
+
 function renderTabList(tabs) {
   let tabsByWindow = getTabsByWindow(tabs);
+  renderTabStats(tabs.length, tabsByWindow.length);
   let lastWindowId = tabsByWindow[tabsByWindow.length - 1].windowId;
   for (let tabWindow of tabsByWindow) {
     for (let tab of tabWindow.tabs) {
