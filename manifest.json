@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Tab List Sidebar",
-  "version": "0.1",
+  "version": "0.2",
   "description": "View a list of all your open tabs in a sidebar",
   "homepage_url": "https://github.com/miller-time/firefox-tab-list",
   "icons": {
