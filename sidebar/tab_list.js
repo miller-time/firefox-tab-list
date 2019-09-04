@@ -81,7 +81,24 @@ function handleError(err) {
   console.error(err);
 }
 
-browser.tabs.query({}).then(
-  renderTabList,
-  handleError
-);
+function load() {
+  browser.tabs.query({}).then(
+    renderTabList,
+    handleError
+  );
+}
+
+load();
+
+function unload() {
+  document
+    .getElementById("content")
+    .innerHTML = '';
+}
+
+document
+  .getElementById("reload")
+  .addEventListener("click", () => {
+    unload();
+    load();
+  });

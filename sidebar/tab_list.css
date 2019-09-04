@@ -5,8 +5,26 @@ body, html {
   background-color: #38383d;
 }
 
+.icon-button {
+  background-color: transparent;
+  border: 2px transparent;
+  padding: 8px;
+  height: 32px;
+}
+
+.icon-button:active {
+  background-color: #2a2a2e;
+  border-radius: 2px;
+}
+
+#toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin: 2px 8px;
+}
+
 #content {
-  margin: 8px;
+  margin: 2px 8px;
 }
 
 .tab-item {
